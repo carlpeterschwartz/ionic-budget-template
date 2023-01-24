@@ -1,0 +1,43 @@
+<ion-tabs (ionTabsDidChange)="setCurrentTab($event)">
+  <ion-tab-bar slot="bottom" mode="ios">
+    <ion-tab-button tab="home">
+      <ion-icon
+        name="grid-outline"
+        [color]="currentTab == 'home' ? 'accent-200' : ''"
+      ></ion-icon>
+      <ion-label [color]="currentTab == 'home' ? 'accent-200' : ''"
+        >Home</ion-label
+      >
+    </ion-tab-button>
+
+    <ion-tab-button tab="activity">
+      <ion-icon
+        name="timer-outline"
+        [color]="currentTab == 'activity' ? 'accent-200' : ''"
+      ></ion-icon>
+      <ion-label [color]="currentTab == 'activity' ? 'accent-200' : ''"
+        >Activity</ion-label
+      >
+    </ion-tab-button>
+
+    <ion-tab-button tab="report">
+      <ion-icon
+        name="newspaper-outline"
+        [color]="currentTab == 'report' ? 'accent-200' : ''"
+      ></ion-icon>
+      <ion-label [color]="currentTab == 'report' ? 'accent-200' : ''"
+        >Report</ion-label
+      >
+    </ion-tab-button>
+
+    <ion-tab-button tab="profile">
+      <ion-icon
+        name="person-outline"
+        [color]="currentTab == 'profile' ? 'accent-200' : ''"
+      ></ion-icon>
+      <ion-label [color]="currentTab == 'profile' ? 'accent-200' : ''"
+        >Profile</ion-label
+      >
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

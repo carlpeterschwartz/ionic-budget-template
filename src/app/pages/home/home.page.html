@@ -1,0 +1,19 @@
+<ion-content class="ion-padding">
+  <section class="hero">
+    <span class="title">Budget</span>
+    <p class="large-amount">{{formatMoney(totalSpent(budgets))}}</p>
+    <span class="sub-title"
+      >Left out of {{formatMoney(totalBudget(budgets))}} budgeted</span
+    >
+  </section>
+
+  <section>
+    <budget-card
+      [budget]="budget"
+      *ngFor="let budget of budgets"
+      (click)="details(budget.id)"
+    ></budget-card>
+  </section>
+
+  <fbc title="Budget"></fbc>
+</ion-content>

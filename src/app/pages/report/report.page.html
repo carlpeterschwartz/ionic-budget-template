@@ -1,0 +1,38 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios" color="dark-100">
+    <ion-buttons slot="start" mode="md">
+      <ion-back-button class="recipe-back_btn" mode="ios" text="">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-no-padding">Report</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <section>
+    <div class="activity-header">
+      <span class="title">This Month</span>
+
+      <div>
+        <ion-buttons slot="start" mode="md">
+          <ion-button mode="ios">
+            <ion-icon name="options-outline"></ion-icon>
+            <span class="title">Filter</span>
+          </ion-button>
+        </ion-buttons>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero">
+    <canvas id="reportChart">{{ chart }}</canvas>
+  </section>
+
+  <section>
+    <category-list
+      [budget]="budget"
+      *ngFor="let budget of budgets"
+      (click)="details(budget.id)"
+    ></category-list>
+  </section>
+</ion-content>

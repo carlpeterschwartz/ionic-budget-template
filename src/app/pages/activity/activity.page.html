@@ -1,0 +1,37 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios" color="dark-100">
+    <ion-buttons slot="start" mode="md">
+      <ion-back-button class="recipe-back_btn" mode="ios" text="">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-no-padding">Activity</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <section>
+    <div class="activity-header">
+      <span class="title">This Month</span>
+
+      <div>
+        <ion-buttons slot="start" mode="md">
+          <ion-button mode="ios">
+            <ion-icon name="options-outline"></ion-icon>
+            <span class="title">Filter</span>
+          </ion-button>
+        </ion-buttons>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card-holder">
+      <transaction-list
+        [lastIndex]="transactions.length - 1"
+        [transaction]="transaction"
+        [index]="i"
+        *ngFor="let transaction of transactions; let i = index"
+      ></transaction-list>
+    </div>
+  </section>
+</ion-content>

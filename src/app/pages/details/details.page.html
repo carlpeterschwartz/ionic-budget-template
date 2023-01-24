@@ -1,0 +1,35 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar mode="ios" color="dark-100">
+    <ion-buttons slot="start" mode="md">
+      <ion-back-button class="recipe-back_btn" mode="ios" text="">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-no-padding"
+      >{{ budget ? budget?.title : 'No budget with ID: ' + id }}</ion-title
+    >
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <details-card [budget]="budget" *ngIf="budget"></details-card>
+  <section>
+    <span class="title">Last 7 Days</span>
+    <div class="graph-card">
+      <canvas id="burnChart">{{ chart }}</canvas>
+    </div>
+  </section>
+
+  <section>
+    <span class="title">Transactions</span>
+    <div class="graph-card">
+      <transaction-list
+        [lastIndex]="budget?.transactions.length - 1"
+        [transaction]="transaction"
+        [index]="i"
+        *ngFor="let transaction of budget?.transactions; let i = index"
+      ></transaction-list>
+    </div>
+  </section>
+
+  <fbc title="Expense" color="danger"></fbc>
+</ion-content>

@@ -1,0 +1,19 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 15.625rem;
+  padding: 2rem;
+  position: relative;
+}
+
+.activity-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  ion-icon {
+    margin-right: 0.4rem;
+  }
+}
